@@ -67,22 +67,28 @@ public class CursomcApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Categoria cat1 = new Categoria(null, "Informática");
-		Categoria cat2 = new Categoria(null, "Escritório");
+		Categoria cat1 = new Categoria(null, "Cachorro");
+		Categoria cat2 = new Categoria(null, "Gato");
+		Categoria cat3 = new Categoria(null, "Pássaro");
+		Categoria cat4 = new Categoria(null, "Reptil");
+		Categoria cat5 = new Categoria(null, "Outros");
 		
-		Produto p1 = new Produto(null, "Computador", 2000.00);
-		Produto p2 = new Produto(null, "Impressora", 800.00);
-		Produto p3 = new Produto(null, "Mouse", 80.00);
+		Produto p1 = new Produto(null, "Dalmatas", 2000.00);
+		Produto p2 = new Produto(null, "Pastor Alemão", 800.00);
+		Produto p3 = new Produto(null, "Pitbull", 80.00);
+		Produto p4 = new Produto(null, "Vira Lata", 80.00);
+		Produto p5 = new Produto(null, "Husky Siberiano", 80.00);
+		Produto p6 = new Produto(null, "Husky Siberiano", 80.00);
 		
-		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
+		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3, p4, p5, p6));
 		cat2.getProdutos().addAll(Arrays.asList(p2));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1));
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
-		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5));
+		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6));
 		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
@@ -137,8 +143,6 @@ public class CursomcApplication implements CommandLineRunner{
 		
 		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 		
-		
 	}
 
 }
-
