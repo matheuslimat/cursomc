@@ -2,6 +2,7 @@ package com.cursomc.resources;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -52,6 +53,7 @@ public class CategoriaResource {
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<List<CategoriaDTO>> findAll() {
 		List<Categoria> list = service.findAll();
-		return ResponseEntity.ok().body(list);
+		List<CategoriaDTO> listDto = list.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDto);
 	}
 }
