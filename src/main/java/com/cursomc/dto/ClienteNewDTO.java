@@ -2,20 +2,45 @@ package com.cursomc.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.br.CPF;
+
 public class ClienteNewDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@NotEmpty(message="Ops! Preenchimento obrigatório.")
+	@Length(min=5, max=120, message="Ops! O tamanho deve estar entre 5 e 120 caracteres.")
 	private String nome;
+	
+	@NotEmpty(message="Precisamos do seu email para continuar.")
+	@Email(message="Email inválido")
 	private String email;
+	
+	@NotEmpty(message="Ops! Preenchimento obrigatório.")
+	@CPF(message="CPF inválido")
 	private String cpf;
+	
 	private Integer tipo;
+	
+	@NotEmpty(message="Ops! Preenchimento obrigatório.")
 	private String logradouro;
+	
+	@NotEmpty(message="Ops! Preenchimento obrigatório.")
 	private String numero;
+	
 	private String complemento;
+	
 	private String bairro;
+	
+	@NotEmpty(message="Ops! Preenchimento obrigatório.")
 	private String cep;
 	
+	@NotEmpty(message="Ops! Preenchimento obrigatório.")
 	private String telefone1;
+	
 	private String telefone2;
 	private String telefone3;
 	
