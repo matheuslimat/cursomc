@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +17,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.cursomc.domain.enums.Sexo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -26,6 +29,11 @@ public class Produto implements Serializable {
 	private Integer id;
 	private String nome;
 	private double preco;
+	private Integer idade;
+	private String nomeDoDono;
+	
+	@Enumerated(EnumType.STRING)
+	private Sexo sexo;
 	
 	@JsonIgnore
 	@ManyToMany
@@ -36,14 +44,17 @@ public class Produto implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy="id.produto")
 	private Set<ItemPedido> itens = new HashSet<>();
-	
+
 	public Produto() {}
 
-	public Produto(Integer id, String nome, double preco) {
+	public Produto(Integer id, String nome, double preco, Integer idade, Sexo sexo, String nomeDoDono) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
+		this.idade = idade;
+		this.sexo = sexo;
+		this.nomeDoDono = nomeDoDono;
 	}
 	
 	@JsonIgnore
@@ -94,6 +105,30 @@ public class Produto implements Serializable {
 
 	public void setItens(Set<ItemPedido> itens) {
 		this.itens = itens;
+	}
+	
+	public Integer getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
+
+	public String getNomeDoDono() {
+		return nomeDoDono;
+	}
+
+	public void setNomeDoDono(String nomeDoDono) {
+		this.nomeDoDono = nomeDoDono;
+	}
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
 	}
 
 	@Override

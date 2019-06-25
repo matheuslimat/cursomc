@@ -3,6 +3,8 @@ package com.cursomc;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
+import javax.swing.text.MaskFormatter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,6 +22,7 @@ import com.cursomc.domain.PagamentoComCartao;
 import com.cursomc.domain.Pedido;
 import com.cursomc.domain.Produto;
 import com.cursomc.domain.enums.EstadoPagamento;
+import com.cursomc.domain.enums.Sexo;
 import com.cursomc.domain.enums.TipoCliente;
 import com.cursomc.repositories.CategoriaRepository;
 import com.cursomc.repositories.CidadeRepository;
@@ -73,14 +76,31 @@ public class CursomcApplication implements CommandLineRunner{
 		Categoria cat4 = new Categoria(null, "Reptil");
 		Categoria cat5 = new Categoria(null, "Outros");
 		
-		Produto p1 = new Produto(null, "Dalmatas", 2000.00);
-		Produto p2 = new Produto(null, "Pastor Alemão", 800.00);
-		Produto p3 = new Produto(null, "Pitbull", 80.00);
-		Produto p4 = new Produto(null, "Vira Lata", 80.00);
-		Produto p5 = new Produto(null, "Husky Siberiano", 80.00);
-		Produto p6 = new Produto(null, "Husky Siberiano", 80.00);
+		Produto p1 = new Produto(null, "Dalmatas", 0.00, 4, Sexo.Masculino, "Matheus Lima");
+		Produto p2 = new Produto(null, "Pastor Alemão", 0.00, 3, Sexo.Masculino, "Vinicius Filho");
+		Produto p3 = new Produto(null, "Pitbull", 0.00, 4, Sexo.Feminino, "Larissa Jaraia");
+		Produto p4 = new Produto(null, "Vira Lata", 0.00, 5, Sexo.Feminino, "Ana Bianca");
+		Produto p5 = new Produto(null, "Bulldogue", 0.00, 6, Sexo.Masculino, "Fernanda Paula");
+		Produto p6 = new Produto(null, "Labrador", 0.00, 5, Sexo.Feminino, "Iane Arruda");
+		Produto p7 = new Produto(null, "Chihuahua", 0.00, 6, Sexo.Masculino, "Arthur Vieira");
+		Produto p8 = new Produto(null, "Poodle", 0.00, 7, Sexo.Masculino, "Rodrigo Santos");
+		Produto p9 = new Produto(null, "Husky Siberiano", 0.00, 6, Sexo.Masculino, "Humberto Alves");
+		Produto p10 = new Produto(null, "Pug", 0.00, 5, Sexo.Masculino, "Antonio Pereira");
+		Produto p11 = new Produto(null, "Beagle", 0.00, 7, Sexo.Feminino, "Bianca Freitas");
+		Produto p12 = new Produto(null, "Boxer", 0.00, 8, Sexo.Masculino, "Sabrina Sato");
+		Produto p13 = new Produto(null, "Rottweiler", 0.00, 2, Sexo.Feminino, "Paulo Pereira");
+		Produto p14 = new Produto(null, "Pincher", 0.00, 1, Sexo.Feminino, "Igor Lunatico");
+		Produto p15 = new Produto(null, "Chow-Chow", 0.00, 2, Sexo.Masculino, "Davila Santos");
+		Produto p16 = new Produto(null, "Boston Terrier", 0.00, 3, Sexo.Feminino, "Rodolfo Santos");
+		Produto p17 = new Produto(null, "Yorkshire", 0.00, 4, Sexo.Masculino, "Jordan Fernandes");
+		Produto p18 = new Produto(null, "Shih Tzu", 0.00, 4, Sexo.Feminino, "Ramon Souza");
+		Produto p19 = new Produto(null, "Golden Retriever", 0.00, 5, Sexo.Masculino, "Paulo Santos");
+		Produto p20 = new Produto(null, "Bulldogue Inglês", 0.00, 6, Sexo.Feminino, "Rodolfo Mendes");
+		Produto p21 = new Produto(null, "Cocker Spaniel", 0.00, 6, Sexo.Masculino, "Garataia Samander");
+		Produto p22 = new Produto(null, "Outras raças", 0.00, 7, Sexo.Feminino, "Bruna Medeiros");
 		
-		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3, p4, p5, p6));
+		
+		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22));
 		cat2.getProdutos().addAll(Arrays.asList(p2));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1));
@@ -88,7 +108,7 @@ public class CursomcApplication implements CommandLineRunner{
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5));
-		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6));
+		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22));
 		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
