@@ -9,7 +9,6 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cursomc.domain.Cliente;
-import com.cursomc.domain.enums.TipoCliente;
 import com.cursomc.dto.ClienteNewDTO;
 import com.cursomc.repositories.ClienteRepository;
 import com.cursomc.resources.exception.FieldMessage;

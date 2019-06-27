@@ -17,7 +17,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.cursomc.domain.enums.TipoCliente;
-import com.cursomc.services.validation.ClienteInsert;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
