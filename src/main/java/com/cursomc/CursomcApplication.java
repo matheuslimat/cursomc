@@ -104,8 +104,31 @@ public class CursomcApplication implements CommandLineRunner{
 		cat2.getProdutos().addAll(Arrays.asList(p2));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1));
-		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
+		p2.getCategorias().addAll(Arrays.asList(cat1));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
+		p4.getCategorias().addAll(Arrays.asList(cat1));
+		p5.getCategorias().addAll(Arrays.asList(cat1));
+		p6.getCategorias().addAll(Arrays.asList(cat1));
+		p7.getCategorias().addAll(Arrays.asList(cat1));
+		p8.getCategorias().addAll(Arrays.asList(cat1));
+		p9.getCategorias().addAll(Arrays.asList(cat1));
+		p10.getCategorias().addAll(Arrays.asList(cat1));
+		p11.getCategorias().addAll(Arrays.asList(cat1));
+		p12.getCategorias().addAll(Arrays.asList(cat1));
+		p13.getCategorias().addAll(Arrays.asList(cat1));
+		p14.getCategorias().addAll(Arrays.asList(cat1));
+		p15.getCategorias().addAll(Arrays.asList(cat1));
+		p16.getCategorias().addAll(Arrays.asList(cat1));
+		p17.getCategorias().addAll(Arrays.asList(cat1));
+		p18.getCategorias().addAll(Arrays.asList(cat1));
+		p19.getCategorias().addAll(Arrays.asList(cat1));
+		p20.getCategorias().addAll(Arrays.asList(cat1));
+		p21.getCategorias().addAll(Arrays.asList(cat1));
+		p22.getCategorias().addAll(Arrays.asList(cat1));
+
+		
+		p2.getCategorias().addAll(Arrays.asList(cat2));
+		p3.getCategorias().addAll(Arrays.asList(cat3));
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22));
