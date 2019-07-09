@@ -8,14 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 
 public class SmtEmailService extends AbstractEmailService{
 
 	@Autowired
-	private MailSender mailSender;
+	public MailSender mailSender;
 	
 	@Autowired
-	private JavaMailSender javaMailSender;
+	public JavaMailSender javaMailSender;
 	
 	private static final Logger LOG = LoggerFactory.getLogger(MockEmailService.class);
 

@@ -19,7 +19,6 @@ import com.cursomc.repositories.PedidoRepository;
 public class PedidoService {
 
 	@Autowired
-
 	private PedidoRepository repo;
 
 	@Autowired
