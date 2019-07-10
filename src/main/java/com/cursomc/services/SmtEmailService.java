@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Service;
 
 public class SmtEmailService extends AbstractEmailService{
 
@@ -32,7 +31,6 @@ public class SmtEmailService extends AbstractEmailService{
 		LOG.info("Enviando Email...");
 		javaMailSender.send(msg);
 		LOG.info("Email Enviado");
-		
 	}
 
 }

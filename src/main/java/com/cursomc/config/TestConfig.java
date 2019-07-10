@@ -49,5 +49,4 @@ public class TestConfig {
 	      
 	    return mailSender;
 	}
-	
 }
