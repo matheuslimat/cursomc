@@ -27,6 +27,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	private String imageUrl;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -154,6 +156,14 @@ public class Cliente implements Serializable {
 
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
+	}
+	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 	
 	@Override
