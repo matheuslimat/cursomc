@@ -143,28 +143,32 @@ public class DBservice {
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 
-		Cliente cli1 = new Cliente(null, "Maria Silva", "benissecosta@gmail.com", "34833073030", TipoCliente.PESSOAFISICA, pe.encode("123"));
-		cli1.getTelefones().addAll(Arrays.asList("33427712", "24906872"));
+		Cliente cli = new Cliente(null, "Maria Silva", "benisscosta@gmail.com", "58528130100", TipoCliente.PESSOAFISICA, pe.encode("123"));
+		cli.getTelefones().addAll(Arrays.asList("33427712", "24906872"));
 
 		Cliente cli2 = new Cliente(null, "Ana hah", "matheuslimat@gmail.com", "97332812045", TipoCliente.PESSOAFISICA, pe.encode("123"));
 		cli2.getTelefones().addAll(Arrays.asList("33218598", "24905874"));
 		cli2.addPerfil(Perfil.ADMIN);
 		
-		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38220834", cli1, c1);
-		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli1, c2);
+		Cliente cli3 = new Cliente(null, "Anna hah", "matheuslima@gmail.com", "69280785028", TipoCliente.PESSOAFISICA, pe.encode("123"));
+		cli3.getTelefones().addAll(Arrays.asList("31818598", "21905874"));
+		cli3.addPerfil(Perfil.ADMIN);
+		
+		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38220834", cli, c1);
+		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli, c2);
 		Endereco e3 = new Endereco(null, "Avenida Floriano", "108", null, "Centro", "58407125", cli2, c2);
 
 
-		cli1.getEnderecos().addAll(Arrays.asList(e1, e2));
+		cli.getEnderecos().addAll(Arrays.asList(e1, e2));
 		cli2.getEnderecos().addAll(Arrays.asList(e3));
 
 
-		clienteRepository.saveAll(Arrays.asList(cli1, cli2));
+		clienteRepository.saveAll(Arrays.asList(cli, cli2));
 		enderecoRepository.saveAll(Arrays.asList(e1, e2, e3));
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		Pedido ped1 = new Pedido(null, sdf.parse("30/09/2017 10:32"), cli1, e1);
-		Pedido ped2 = new Pedido(null, sdf.parse("10/10/2017 19:35"), cli1, e2);
+		Pedido ped1 = new Pedido(null, sdf.parse("30/09/2017 10:32"), cli, e1);
+		Pedido ped2 = new Pedido(null, sdf.parse("10/10/2017 19:35"), cli, e2);
 
 		Pagamento pagto1 = new PagamentoComCartao(null, EstadoPagamento.QUITADO, ped1, 6);
 		ped1.setPagamento(pagto1);
@@ -173,7 +177,7 @@ public class DBservice {
 				null);
 		ped2.setPagamento(pagto2);
 
-		cli1.getPedidos().addAll(Arrays.asList(ped1, ped2));
+		cli.getPedidos().addAll(Arrays.asList(ped1, ped2));
 
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
 		pagamentoRepository.saveAll(Arrays.asList(pagto1, pagto2));
