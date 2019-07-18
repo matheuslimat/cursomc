@@ -150,9 +150,6 @@ public class DBservice {
 		cli2.getTelefones().addAll(Arrays.asList("33218598", "24905874"));
 		cli2.addPerfil(Perfil.ADMIN);
 		
-		Cliente cli3 = new Cliente(null, "Anna hah", "matheuslima@gmail.com", "69280785028", TipoCliente.PESSOAFISICA, pe.encode("123"));
-		cli3.getTelefones().addAll(Arrays.asList("31818598", "21905874"));
-		cli3.addPerfil(Perfil.ADMIN);
 		
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38220834", cli, c1);
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli, c2);
@@ -168,7 +165,7 @@ public class DBservice {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		Pedido ped1 = new Pedido(null, sdf.parse("30/09/2017 10:32"), cli, e1);
-		Pedido ped2 = new Pedido(null, sdf.parse("10/10/2017 19:35"), cli, e2);
+		Pedido ped2 = new Pedido(null, sdf.parse("10/10/2017 19:35"), cli2, e2);
 
 		Pagamento pagto1 = new PagamentoComCartao(null, EstadoPagamento.QUITADO, ped1, 6);
 		ped1.setPagamento(pagto1);
